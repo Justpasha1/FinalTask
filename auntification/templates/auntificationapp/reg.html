@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{%block name%}
+registration
+{%endblock%}
+{%block content%}
+<div class="reg-blok">
+    <div class="reg">
+        <h1>registration</h1>
+        <form  method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="input your nickname" required>
+            <input type="email" name="email" placeholder="input your email" required>
+            <input type="password" name="password" placeholder="input your password" required>
+            <input type="password" name="password_confirm" placeholder="repeat your password" required>
+            <input type="text" name="phone" placeholder="input your phone number" required>
+            <button>Submit</button>
+        </form>
+        <span class="error_reg">{{ error_text }}</span>
+    </div>
+</div>
+{%endblock%}

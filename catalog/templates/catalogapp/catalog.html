@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{%block name%}
+catalogg
+{%endblock%}
+{%block content%}
+
+<div class="catalog-blok">
+  <div class="category">
+    <div class="category-blok">
+    {% for category in additional_category %}
+        <div class="manufacturers">
+          <h2>Manufacturers</h2>
+          <div class="checkbox">
+            <input type="checkbox" class = "check" value="{{ option.price }}" checked>
+            <p>{{category.name}}</p>
+          </div>
+        </div>
+        <br>
+    </div>
+{% endfor %}
+  </div>
+  {% for product in list_products %}
+  <div class="product">
+      <div class="catalogg">
+          
+          <img src="{{product.image.url}}" alt="" style="max-width: 300px;" >
+          <h2>{{product.name}}</h2>
+          <span>{{product.price}}$</span>
+          <button>Detailed description</button>
+
+      </div>
+  </div>   
+  {%endfor%}
+  
+</div>
+{%endblock%}
