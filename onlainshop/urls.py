@@ -35,5 +35,6 @@ urlpatterns = [
     path('product/<product_pk>', show_product, name='product')
 ]
 
+
 if DEBUG:
     urlpatterns += static(MEDIA_URL, document_root = MEDIA_ROOT)
