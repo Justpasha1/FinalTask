@@ -13,6 +13,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='media')
     price = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category' )
+
     
     def get_absolute_url(self):
         return reverse("product",kwargs={"product_pk":self.pk})

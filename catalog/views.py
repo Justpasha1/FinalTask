@@ -10,5 +10,5 @@ def show_catalog(request):
 def show_product(request, product_pk):
     
     context = {"list_products": Product.objects.all()}
-    response = render(request, 'catalogapp/product.html', context)
+    response = render(request, 'catalogapp/product.html',context)
     return response
